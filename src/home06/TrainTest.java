@@ -5,6 +5,8 @@
  */
 package home06;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -13,7 +15,26 @@ import java.util.Scanner;
  */
 public class TrainTest 
 {
-    Train train = new Train(); 
-    Scanner scan = new Scanner("passengers");
+    public static void main(String[] args) throws FileNotFoundException
+    {
+        
+        //setup the file class the input a text document
+        File inputFile = new File("passenger.txt");
+        
+        //initialize the scanner class to input the grades.txt file
+        Scanner scan = new Scanner(inputFile);
+        
+        Train train = new Train();
+        
+    while(scan.hasNext())
+        {   
+            train.addPassenger(scan.next(),scan.nextInt());  
+        }
     
+    for(int i = 0; i < train.size; i++)
+        {
+            if (scan.hasNext())
+                System.out.println(scan.next());
+        }   
+    }
 }
