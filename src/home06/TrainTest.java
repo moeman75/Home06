@@ -36,5 +36,19 @@ public class TrainTest
             if (scan.hasNext())
                 System.out.println(scan.next());
         }   
+    
+    System.out.println(train.getPassenger(1));
+    
+    System.out.println(train.getNumberOfPassengers());
+    
+    System.out.println(train.getFirstClass());
+    
+    System.out.println(train.getRevenue());
+    
+    System.out.println(train.isAPassenger("james"));
+    
+    System.out.println(train.toString());
+    
+    System.out.println(train.equals(train));
     }
 }
