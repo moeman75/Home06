@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Gmoe
  */
-public class TrainTest 
+public class TrainTest
 {
     public static void main(String[] args) throws FileNotFoundException
     {
@@ -24,31 +24,41 @@ public class TrainTest
         //initialize the scanner class to input the grades.txt file
         Scanner scan = new Scanner(inputFile);
         
-        Train train = new Train();
+        int b = 0;
         
-    while(scan.hasNext())
+        while(scan.hasNext())
         {   
-            train.addPassenger(scan.next(),scan.nextInt());  
+            System.out.println("" + scan.nextLine());
+            b++; 
         }
+        System.out.println(b);
     
-    for(int i = 0; i < train.size; i++)
+        Object [] a = new Passenger [b];
+    
+        Train train = new Train();
+    
+        for (int i = 0; i < a.length; i++) 
         {
-            if (scan.hasNext())
-                System.out.println(scan.next());
+            if(scan.hasNext())
+            {
+                a[i] = scan.nextLine();
+                train.addPassenger((Passenger) a[i]);
+            }
         }   
+
+        System.out.println(train.getPassenger(0));
     
-    System.out.println(train.getPassenger(1));
+        System.out.println(train.getNumberOfPassengers());
     
-    System.out.println(train.getNumberOfPassengers());
+        System.out.println(train.getFirstClass());
     
-    System.out.println(train.getFirstClass());
+        System.out.println(train.getRevenue(20,10));
     
-    System.out.println(train.getRevenue());
+        System.out.println(train.isAPassenger("james"));
     
-    System.out.println(train.isAPassenger("james"));
+        System.out.println(train.toString());
     
-    System.out.println(train.toString());
-    
-    System.out.println(train.equals(train));
+        System.out.println(train.equals(train));
     }
 }
+
